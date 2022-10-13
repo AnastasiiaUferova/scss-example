@@ -1,5 +1,7 @@
-@import 'config';
-
+@use 'config' as c;
+@use 'mobile';
+@use 'utilities';
+@import 'buttons';
 
 * {
     box-sizing: border-box;
@@ -8,8 +10,8 @@
 }
 
 body {
-    background-color: $light-color;
-    font-family: $font-stack;
+    background-color: c.$light-color;
+    font-family: c.$font-stack;
     line-height: 1.6;
 }
 
@@ -23,7 +25,7 @@ a {
 }
 
 .showcase {
-    @include set-background($primary-color);
+    @include c.set-background(c.$primary-color);
     height: 600px;
 
     nav {
@@ -41,11 +43,11 @@ a {
         }
 
         a:hover {
-            color: $secondary-color;
+            color: c.$secondary-color;
         }
         
         a {
-            color: set-text-color($primary-color);
+            color: c.set-text-color(c.$primary-color);
         }
     } 
     
@@ -69,8 +71,3 @@ a {
 
     }
 }
-
-@import 'mobile';
-@import 'utilities';
-@import 'buttons';
-
